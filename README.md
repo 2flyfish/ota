@@ -1,5 +1,7 @@
-文件读取 https://2flyfish.github.io/ota/c.html
+文件读取 https://2flyfish.github.io/ota/c.svg
+https://2flyfish.github.io/ota/c.html
 https://2flyfish.github.io/ota/d.html
+
  https://2flyfish.github.io/ota/termux-googleplay-2024-07-07.apk
 
 下面是一些非正常网站的url用于测试：
